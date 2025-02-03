@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "trace_packet.proto";
+
+package unity_perfetto.protos;
+
+message Trace {
+	repeated TracePacket packet = 1;
+}

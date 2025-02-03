@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package unity_perfetto.protos;
+
+message DebugAnnotation {
+	string name = 10;
+
+	oneof value {
+        bool bool_value = 2;
+        uint64 uint_value = 3;
+        int64 int_value = 4;
+        double double_value = 5;
+        // Pointers are stored in a separate type as the JSON output treats them
+        // differently from other uint64 values.
+        uint64 pointer_value = 7;
+        string string_value = 6;
+      }
+
+	repeated DebugAnnotation dict_entries = 11;
+}

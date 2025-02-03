@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package unity_perfetto.protos;
+
+message ProcessDescriptor {
+	optional int32 pid = 1;
+	optional string process_name = 6;
+}

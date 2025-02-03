@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "process_descriptor.proto";
+import "thread_descriptor.proto";
+import "counter_descriptor.proto";
+
+package unity_perfetto.protos;
+
+message TrackDescriptor {
+	optional uint64 uuid = 1;
+	optional uint64 parent_uuid = 5;
+	optional string name = 2;
+	optional ProcessDescriptor process = 3;
+	optional ThreadDescriptor thread = 4;
+	optional CounterDescriptor counter = 8;
+}
